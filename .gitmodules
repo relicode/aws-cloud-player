@@ -1,0 +1,4 @@
+[submodule "s3-src"]
+	path = s3-src
+	url = git@github.com:relicode/kfmc-player-client.git
+	branch = develop
