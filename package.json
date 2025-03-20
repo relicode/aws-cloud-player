@@ -1,0 +1,31 @@
+{
+  "name": "static-site",
+  "version": "1.0.0",
+  "description": "Infrastructure for an HTTPS static site using S3 and CloudFront",
+  "scripts": {
+    "bdeploy": "npm run build && cdk deploy",
+    "build": "sh -c '(if [ -d 's3-content' ]; then rm -r s3-content; fi; mkdir s3-content; cd s3-src && npm run build && rsync -avuP build/ ../s3-content)'",
+    "deploy": "cdk deploy"
+  },
+  "author": {
+    "name": "Amazon Web Services",
+    "url": "https://aws.amazon.com",
+    "organization": true
+  },
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@types/node": "^10.17.0",
+    "@typescript-eslint/parser": "^8.26.1",
+    "aws-cdk": "*",
+    "eslint": "^8.57.1",
+    "prettier": "^3.5.3",
+    "prettier-eslint": "^16.3.0",
+    "ts-node": "^10.9.2",
+    "typescript": "~5.1.6"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "^2.0.0",
+    "cdk": "^2.1005.0",
+    "constructs": "^10.0.0"
+  }
+}
